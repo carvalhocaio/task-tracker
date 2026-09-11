@@ -1,2 +1,7 @@
-task-cli
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+dist/
 tasks.json

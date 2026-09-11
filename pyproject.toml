@@ -1,0 +1,31 @@
+[project]
+name = "task-tracker"
+version = "0.1.0"
+description = "A command-line to-do list manager backed by a plain JSON file."
+requires-python = ">=3.12"
+dependencies = ["rich>=13.7"]
+
+[project.scripts]
+task-cli = "task_tracker.__main__:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.2",
+    "ruff>=0.14.5",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "SIM", "RUF"]
+
+[build-system]
+requires = ["uv_build>=0.12.10,<0.13.0"]
+build-backend = "uv_build"
